@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vychain - A new era of Blockchain is here</title>
+    <style>
+        :root {
+            --primary-color: #64ffda;
+            --bg-color: #0a192f;
+            --secondary-bg: #112240;
+            --text-color: #ffffff;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            width: 40px;
+            height: 40px;
+            background-image: url('vychain.jpg'); /* Chemin vers l'image du logo */
+            background-size: cover;
+            border-radius: 50%;
+        }
+        
+        nav {
+            display: flex;
+            gap: 20px;
+        }
+        
+        nav a {
+            color: var(--text-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        nav a:hover {
+            color: var(--primary-color);
+        }
+        
+        .hero {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 50px 0;
+            gap: 40px;
+        }
+        
+        .hero-content {
+            flex: 1;
+        }
+        
+        .hero h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+        
+        .hero-image {
+            flex: 1;
+            height: 300px;
+            background-image: url('block.jpg'); /* Chemin vers l'image vychain.jpg */
+            background-size: cover;
+            background-position: center;
+            border-radius: 10px;
+        }
+        
+        .github-button {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: var(--bg-color);
+            padding: 10px 20px;
+            border-radius: 20px;
+            text-decoration: none;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+        
+        .github-button:hover {
+            background-color: #4cd6b5;
+        }
+        
+        h2 {
+            margin: 40px 0 20px;
+            color: var(--primary-color);
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 50px;
+        }
+        
+        .feature {
+            background-color: var(--secondary-bg);
+            padding: 15px;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+        
+        .feature:hover {
+            transform: translateY(-5px);
+        }
+        
+        .feature::before {
+            content: "✓";
+            color: var(--primary-color);
+            margin-right: 10px;
+        }
+        
+        .roadmap {
+            border: 1px solid var(--primary-color);
+            padding: 20px;
+            margin-bottom: 50px;
+            border-radius: 8px;
+        }
+        
+        .roadmap-line {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+            position: relative;
+        }
+        
+        .roadmap-line::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background-color: var(--primary-color);
+        }
+        
+        .roadmap-point {
+            width: 20px;
+            height: 20px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            z-index: 1;
+        }
+        
+        .roadmap-labels {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        
+        .roadmap-label {
+            width: 20%;
+            text-align: center;
+            font-size: 0.9em;
+        }
+        
+        .objectives-and-token {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .objectives, .token-info {
+            background-color: var(--secondary-bg);
+            padding: 20px;
+            border-radius: 10px;
+            flex: 1;
+        }
+        
+        .token-info h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            border-top: 1px solid var(--primary-color);
+        }
+        
+        footer .logo {
+            width: 40px;
+            height: 40px;
+            background-image: url('vychain.jpg'); /* Chemin vers l'image du logo */
+            background-size: cover;
+            border-radius: 50%;
+        }
+        
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            nav {
+                margin-top: 20px;
+            }
+            
+            .hero {
+                flex-direction: column;
+            }
+            
+            .hero-image {
+                width: 100%;
+                height: 200px;
+            }
+            
+            .objectives-and-token {
+                flex-direction: column;
+            }
+            
+            .roadmap-labels {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .roadmap-label {
+                width: 100%;
+                text-align: left;
+                margin-bottom: 10px;
+            }
+            
+            footer {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            footer nav {
+                margin-top: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo"></div>
+            <nav>
+                <a href="tokenomics.pdf">Tokenomics</a>
+                <a href="https://linktr.ee/Vychain">Social</a>
+                <a href="vychain.pdf" download>Pitch deck</a>
+            </nav>
+        </header>
+
+        <main>
+            <section class="hero">
+                <div class="hero-content">
+                    <h1>A new era of Blockchain is here</h1>
+                    <p>Vychain is an advanced quantum blockchain that incorporates quantum cryptography and quantum consensus mechanisms to guarantee enhanced security and high scalability. Designed to withstand attacks from Shor and Grover algorithms.</p>
+                </div>
+                <div class="hero-image"></div> <!-- Image intégrée ici -->
+            </section>
+
+            <h2>Vychain main features</h2>
+            <section class="features">
+                <div class="feature">Sidechain</div>
+                <div class="feature">Sharding</div>
+                <div class="feature">Quantum consensus</div>
+                <div class="feature">Merkle tree</div>
+                <div class="feature">Dao</div>
+                <div class="feature">Node management</div>
+                <div class="feature">Smart contract</div>
+                <div class="feature">Bloc management</div>
+                <div class="feature">WebRTC</div>
+                <div class="feature">Sybil protection</div>
+                <div class="feature">Shor protection</div>
+                <div class="feature">DDOS protection</div>
+                <div class="feature">Gas fees</div>
+                <div class="feature">Grover protection</div>
+                <div class="feature">Data compression</div>
+                <div class="feature">Replay protection</div>
+                <div class="feature">Evm compatibility</div>
+                <div class="feature">MITM protection</div>
+                <div class="feature">Double spend protection</div>
+                <div class="feature">Network optimisation</div>
+            </section>
+
+            <section class="roadmap">
+                <h2>Vychain roadmap</h2>
+                <div class="roadmap-line">
+                    <div class="roadmap-point"></div>
+                    <div class="roadmap-point"></div>
+                    <div class="roadmap-point"></div>
+                    <div class="roadmap-point"></div>
+                    <div class="roadmap-point"></div>
+                </div>
+                <div class="roadmap-labels">
+                    <div class="roadmap-label">2022 : Beginning of Development</div>
+                    <div class="roadmap-label">Q1 2024 : Implementation smart contract</div>
+                    <div class="roadmap-label">Q3 2024 : Incubation with Digits venture</div>
+                    <div class="roadmap-label">Q4 2024 : Vychain Launch</div>
+                </div>
+            </section>
+
+            <section class="objectives-and-token">
+                <div class="objectives">
+                    <h2>Vychain objectives</h2>
+                    <p>• Create a robust quantum blockchain platform<br>
+                    • Enable secure and fast transactions<br>
+                    • Facilitate decentralized applications (dApps)<br>
+                    • Foster a community-driven ecosystem</p>
+                </div>
+                <div class="token-info">
+                    <h2>Tokenomics</h2>
+                    <p>• Name: Vychain Token (VYC)<br>
+                    • Total Supply: 36 million VYC<br>
+                    • Use Cases: Transaction fees, staking rewards, governance</p>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="logo"></div>
+            <nav>
+                <a href="tokenomics.pdf">Tokenomics</a>
+                <a href="https://linktr.ee/Vychain">Social</a>
+                <a href="vychain.pdf" download>Pitch deck</a>
+            </nav>
+        </footer>
+    </div>
+</body>
+</html>
